@@ -1,0 +1,57 @@
+<!DOCTYPE patchbay>
+<patchbay name="pachbey" version="1.0.4">
+ <output-sockets>
+  <socket client="Family\ 17h\/19h\/1ah\ HD\ Audio\ Controller\ Analog\ Stereo" exclusive="off" name="Family 17h/19h/1ah HD Audio Controller Analog Stereo" type="jack-audio">
+   <plug>capture_FL</plug>
+   <plug>capture_FR</plug>
+   <plug>monitor_FL</plug>
+   <plug>monitor_FR</plug>
+  </socket>
+  <socket client="speech\-dispatcher\-espeak\-ng" exclusive="off" name="speech-dispatcher-espeak-ng" type="jack-audio">
+   <plug>output_FL</plug>
+   <plug>output_FR</plug>
+  </socket>
+  <socket client="speech\-dispatcher\-dummy" exclusive="off" name="speech-dispatcher-dummy" type="jack-audio">
+   <plug>output_FL</plug>
+   <plug>output_FR</plug>
+  </socket>
+  <socket client="Renoir\ Radeon\ High\ Definition\ Audio\ Controller\ Digital\ Stereo\ \(HDMI\ 2\)" exclusive="off" name="Renoir Radeon High Definition Audio Controller Digital Stereo (HDMI 2)" type="jack-audio">
+   <plug>monitor_FL</plug>
+   <plug>monitor_FR</plug>
+  </socket>
+  <socket client="Midi\-Bridge" exclusive="off" name="Midi-Bridge" type="jack-midi">
+   <plug>Midi\ Through\ Port\-0\ \(capture\)</plug>
+  </socket>
+  <socket client="BLE\ MIDI\ 1" exclusive="off" name="BLE MIDI 1" type="jack-midi">
+   <plug>out</plug>
+  </socket>
+  <socket client="Midi\ Through" exclusive="off" name="Midi Through" type="alsa-midi">
+   <plug>Midi\ Through\ Port\-0</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket client="Renoir\ Radeon\ High\ Definition\ Audio\ Controller\ Digital\ Stereo\ \(HDMI\ 2\)" exclusive="off" name="Renoir Radeon High Definition Audio Controller Digital Stereo (HDMI 2)" type="jack-audio">
+   <plug>playback_FL</plug>
+   <plug>playback_FR</plug>
+  </socket>
+  <socket client="Family\ 17h\/19h\/1ah\ HD\ Audio\ Controller\ Analog\ Stereo" exclusive="off" name="Family 17h/19h/1ah HD Audio Controller Analog Stereo" type="jack-audio">
+   <plug>playback_FL</plug>
+   <plug>playback_FR</plug>
+  </socket>
+  <socket client="Midi\-Bridge" exclusive="off" name="Midi-Bridge" type="jack-midi">
+   <plug>Midi\ Through\ Port\-0\ \(playback\)</plug>
+  </socket>
+  <socket client="BLE\ MIDI\ 1" exclusive="off" name="BLE MIDI 1" type="jack-midi">
+   <plug>in</plug>
+  </socket>
+  <socket client="Midi\ Through" exclusive="off" name="Midi Through" type="alsa-midi">
+   <plug>Midi\ Through\ Port\-0</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable input="Renoir Radeon High Definition Audio Controller Digital Stereo (HDMI 2)" output="speech-dispatcher-espeak-ng" type="jack-audio"/>
+  <cable input="Renoir Radeon High Definition Audio Controller Digital Stereo (HDMI 2)" output="speech-dispatcher-dummy" type="jack-audio"/>
+ </cables>
+</patchbay>
+
