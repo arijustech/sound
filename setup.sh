@@ -41,7 +41,23 @@ install_packages() {
 # Skambinama funkcija, kad įdiegtų paketai priklausomai nuo distros
 install_packages
 
+# Tikrina, ar egzistuoja katalogas .pachbey, ir sukuria, jei nėra
+if [ ! -d "$HOME/.pachbey" ]; then
+  echo "Directory .pachbey does not exist. Creating it..."
+  sudo mkdir "$HOME/.pachbey"
+else
+  echo "Directory .pachbey already exists."
+fi
+
+# Tikrina, ar failas pachbey.xml jau egzistuoja kataloge .pachbey
+if [ ! -f "$HOME/.pachbey/pachbey.xml" ]; then
+  echo "pachbey.xml does not exist in .pachbey. Copying it..."
+  sudo cp "$HOME/sound/pachbey.xml" "$HOME/.pachbey/"
+else
+  echo "pachbey.xml already exists in .pachbey."
+fi
+
 echo "Cleaning up..."
-sudo rm -r $HOME/sound
+sudo rm -r "$HOME/sound"
 echo "Installation completed. Please log out and log back in to apply group changes."
 echo "For all changes to take effect, please reboot your computer."
