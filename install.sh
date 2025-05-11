@@ -38,11 +38,10 @@ install_packages() {
   fi
 }
 
-echo "Cleaning up..."
-sudo rm -r $HOME/sound
-
 # Skambinama funkcija, kad įdiegtų paketai priklausomai nuo distros
 install_packages
 
+echo "Cleaning up..."
+sudo rm -r $HOME/sound
 echo "Installation completed. Please log out and log back in to apply group changes."
 echo "For all changes to take effect, please reboot your computer."
