@@ -57,6 +57,10 @@ else
   echo "pachbey.xml already exists in .pachbey."
 fi
 
+# Užlaudinti pachbey.xml failą su qjackctl
+echo "Loading pachbey.xml with qjackctl..."
+qjackctl --load "$HOME/.pachbey/pachbey.xml"
+
 echo "Cleaning up..."
 sudo rm -r "$HOME/sound"
 echo "Installation completed. Please log out and log back in to apply group changes."
